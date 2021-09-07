@@ -130,20 +130,20 @@ qb:DimensionProperty a owl:ObjectProperty;
     rdfs:comment "The class of components which represent the dimensions of the cube"@en;
     rdfs:subPropertyOf qb:ComponentProperty;
     rdfs:subPropertyOf qb:CodedProperty;
-    owl:propertyDisjointWith qb:MeasureProperty;
+#    owl:propertyDisjointWith qb:MeasureProperty;
     .
 qb:AttributeProperty a owl:ObjectProperty;
     rdfs:label "Attribute property"@en;
     rdfs:comment "The class of components which represent attributes of observations in the cube, e.g. unit of measurement"@en;
     rdfs:subPropertyOf qb:ComponentProperty;
-    owl:propertyDisjointWith qb:MeasureProperty;
+#    owl:propertyDisjointWith qb:MeasureProperty;
     .
 qb:MeasureProperty a owl:DatatypeProperty;
     rdfs:label "Measure property"@en;
     rdfs:comment "The class of components which represent the measured value of the phenomenon being observed"@en;
-    rdfs:subPropertyOf qb:ComponentProperty;
-    owl:propertyDisjointWith qb:AttributeProperty;
-    owl:propertyDisjointWith qb:DimensionProperty;
+#    rdfs:subPropertyOf qb:ComponentProperty;
+#    owl:propertyDisjointWith qb:AttributeProperty;
+#    owl:propertyDisjointWith qb:DimensionProperty;
     .
 qb:CodedProperty a owl:ObjectProperty;
     rdfs:label "Coded property"@en;
@@ -156,7 +156,7 @@ qb:CodedProperty a owl:ObjectProperty;
 qb:measureType a owl:AnnotationProperty;
     rdfs:label "measure type"@en;
     rdfs:comment "Generic measure dimension, the value of this dimension indicates which measure (from the set of measures in the DSD) is being given by the obsValue (or other primary measure)"@en;
-    rdfs:range  qb:MeasureProperty;
+#    rdfs:range  qb:MeasureProperty;
     .
 
 # --- Data Structure Definitions ---------------------------
@@ -234,7 +234,7 @@ qb:measure a owl:AnnotationProperty;
     rdfs:label "measure"@en;
     rdfs:comment "An alternative to qb:componentProperty which makes explicit that the component is a measure"@en;
     rdfs:subPropertyOf qb:componentProperty;
-    rdfs:range qb:MeasureProperty;
+#    rdfs:range qb:MeasureProperty;
     .
 
 qb:attribute a owl:AnnotationProperty;
@@ -285,7 +285,7 @@ qb:concept a owl:AnnotationProperty;
 qb:codeList a owl:ObjectProperty;
     rdfs:label "code list"@en;
     rdfs:comment "gives the code list associated with a CodedProperty"@en;
-    rdfs:domain qb:CodedProperty;
+#    rdfs:domain qb:CodedProperty;
     rdfs:range  [ owl:unionOf (skos:ConceptScheme skos:Collection qb:HierarchicalCodeList)] ;
     .
 
